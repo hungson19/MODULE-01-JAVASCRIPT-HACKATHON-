@@ -1,0 +1,30 @@
+<!-- Bài 4: 15 điểm
+Viết chương trình nhập vào một chuỗi ký tự, xóa ký tự số trong đó
+
+Input: Chuỗi kí tự bao gồm chữ và số
+Output: Chuỗi kí tự đã xóa số -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+function removeNumbers(inputString) {
+  // Sử dụng biểu thức chính quy để xóa các ký tự số
+  const stringWithoutNumbers = inputString.replace(/\d/g, '');
+
+  return stringWithoutNumbers;
+}
+
+// Test với một số chuỗi đầu vào
+const inputString = 'Hello123World456';
+const result = removeNumbers(inputString);
+console.log(result);
+
+</script>
+</body>
+</html>

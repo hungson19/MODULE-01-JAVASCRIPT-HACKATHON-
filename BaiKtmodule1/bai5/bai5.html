@@ -1,0 +1,36 @@
+<!-- Bài 5: 25 điểm
+Nhập vào một chuỗi và trả về là các thành phần trong chuỗi đảo ngược. Tất cả khoảng trắng trong chuỗi phải được giữ lại.
+
+Input: Chuỗi ký tự
+Output: Chuỗi đã được đảo ngược các thành phần -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+        function reverseStringWithSpaces(inputString) {
+  // Chia chuỗi thành mảng các từ
+  const words = inputString.split(' ');
+
+  // Đảo ngược mỗi từ trong mảng
+  const reversedWords = words.map(word => word.split('').reverse().join(''));
+
+  // Kết hợp các từ đã đảo ngược lại thành chuỗi mới
+  const reversedString = reversedWords.join(' ');
+
+  return reversedString;
+}
+
+// Test với một số chuỗi đầu vào
+const inputString = 'Hello World';
+const result = reverseStringWithSpaces(inputString);
+console.log(result);
+
+</script>
+</body>
+</html>

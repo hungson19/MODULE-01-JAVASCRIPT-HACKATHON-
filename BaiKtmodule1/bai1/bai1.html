@@ -1,0 +1,42 @@
+<!-- Bài 1: 15 điểm
+Nhập vào một chuỗi là 5 chữ số nguyên, tìm số lớn nhất và duy nhất trong 5 số đó.
+
+Input: Một chuỗi số nguyên có 5 chữ số
+Output: Số lớn nhất và cũng là số duy nhất -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function findMaxUniqueNumber(inputString) {
+  // Kiểm tra đầu vào có đúng 5 chữ số không
+    if (/^\d{5}$/.test(inputString)) {
+    // Chuyển chuỗi thành mảng các chữ số
+    const digits = inputString.split('').map(Number);
+
+    // Sắp xếp mảng giảm dần
+    const sortedDigits = digits.sort((a, b) => b - a);
+
+    // Lặp để tìm số lớn nhất và duy nhất
+    for (let i = 0; i < sortedDigits.length; i++) {
+      if (sortedDigits[i] !== sortedDigits[i + 1]) {
+        return sortedDigits[i];
+      }
+    }
+  } else {
+    return 'Đầu vào không hợp lệ. Vui lòng nhập 5 chữ số nguyên.';
+  }
+}
+
+// Test với một số chuỗi đầu vào
+const result = findMaxUniqueNumber('54321');
+console.log(result);
+
+</script>
+</body>
+</html>
